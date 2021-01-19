@@ -1,0 +1,32 @@
+
+spring:
+  cloud:
+    config:
+      name: config  #文件前缀名称
+      profile: zh
+      uri: http://127.0.0.1:8888
+  datasource:
+    url: jdbc:mysql://localhost:3306/root?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: ZH994600.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    tomcat:
+      max-active: 20
+      max-idle: 8
+      min-idle: 8
+      initial-size: 10
+server:
+  servlet:
+    context-path: /
+
+##静态资源下载资源对外暴露的路径和访问路径。
+#file:
+#  #映射路径，不要改变。如果改动，Js中也必须改动
+#  staticAccessPath: /upLoad/**
+#  filePaths: /upLoad
+#  #文件上传目录（注意Linux和Windows上的目录结构不同）
+#  #部署项目时在服务器上首先建立该路径，并更改uploadFolder的内容，内容为建立的路径。
+#  #file.uploadFolder=/home/upload/
+#  uploadFolder: D://upLoad/
+#  downFile: D://
+#  cacheFolder: D://upLoad/cacheFolder/

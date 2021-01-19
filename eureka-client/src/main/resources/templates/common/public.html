@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block>zh</th:block>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+
+<!-- 引入bootstrap-->
+<div th:fragment="bootStrapCssAndJs">
+    <!--bootstrap及jquery-->
+    <script type="text/javascript" th:src="'/common/jquery/jquery-3.5.1.min.js'"></script>
+    <link rel="stylesheet" th:href="'/common/bootstrap/bootstrap.min.css'" />
+    <script type="text/javascript" th:src="'/common/bootstrap/bootstrap.min.js'"></script>
+
+    <!--bootstrap-table-->
+    <link rel="stylesheet" th:href="'/common/bootstrap-table/bootstrap-table.min.css'" />
+    <script type="text/javascript" th:src="'/common/bootstrap-table/bootstrap-table.min.js'"></script>
+    <script type="text/javascript" th:src="'/common/bootstrap-table/bootstrap-table-zh-CN.js'"></script>
+</div>
+
+
+</body>
+</html>
