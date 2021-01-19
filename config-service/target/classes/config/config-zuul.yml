@@ -1,0 +1,32 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: zuul
+
+eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    preferIpAddress: true
+    instanceId: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+  client:
+#    registerWithEureka: true  #是否将自己注册到Eureka服务中，默认为true
+#    fetchRegistry: true       #是否从Eureka中获取注册信息，默认为true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+      #配置路由规则
+#zuul:
+#  servlet-path: /
+#  routes:
+#    user:
+#      path: /zuul/**
+#      serviceId: zh
+#  #需要忽略的头部信息，不在传播到其他服务
+#  sensitive-headers: Access-Control-Allow-Origin
+#  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
+
